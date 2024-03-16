@@ -12,7 +12,15 @@ General notes:
 - you need to create manually HDL project - ISE generally does not support Git
   or any other revision system well (Vivado is a bit better - it can generate TCL
   script capable of creating full project and adding files to it from CLI)
-- selecting XC2C256 device, 144 pins, package TQ144
+- keep "Top-level source type:" `HDL` (this includes both Verilog and VHDL)
+- selecting XC2C256 device, 144 pins, package TQ144, speed 7ns
+  - set filters to:
+    - Family: `CoolRunner2 CPLDs`
+    - Device: `XC2C256`
+    - Package: `TQ144`
+    - Speed: `-7`
+    - all other options can be left default.
+- click Next and Finish to create project
 - then add copy of constraint file (`*.ucf`) - it defines used Pins that will be
   mapped to Verilog module.
 - next add copy of Verilog top module (`top.v`)
@@ -31,6 +39,11 @@ Required Software:
 * Xilinx ISE Webpack 14.7 - official VM, can be downloaded from:
   - https://account.amd.com/en/forms/downloads/xef.html?filename=Xilinx_ISE_14.7_Win10_14.7_VM_0213_1.zip
   - unpack above zip and import `ova/14.7_VM.ova` to your VirtualBox
+  - or you can use normal installer, however only Win7 or XP are supported. I tried it under Win10,
+    but some features cause crash (for example file dialogs will crash ISE)
+  - Workaround for File Dialog crash under Win 10:
+    - use 32-bit version of ISE (there is launch icon available)
+  - also note that iMPACT works fine (even 64-bit version) under Win10
 
 # Tips
 
