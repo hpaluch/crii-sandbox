@@ -7,6 +7,7 @@ Current sandbox projects:
 * [tut01-swleds/](tut01-swleds/) - most-trivial project in Verilog.
   - control LED LD0 & LD1 with Button BTN0
   - control LED LD2 & LD3 with Button BTN1
+* [tut02-blink/](tut02-blink/) - most simple bliking LEDs demo
 
 General notes:
 - you need to create manually HDL project - ISE generally does not support Git
