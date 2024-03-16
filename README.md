@@ -8,6 +8,7 @@ Current sandbox projects:
   - control LED LD0 & LD1 with Button BTN0
   - control LED LD2 & LD3 with Button BTN1
 * [tut02-blink/](tut02-blink/) - most simple bliking LEDs demo
+  - BTN0 (right button!) is counter RESET when pressed
 
 General notes:
 - you need to create manually HDL project - ISE generally does not support Git
