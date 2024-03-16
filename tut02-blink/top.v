@@ -11,10 +11,12 @@
 // Description: 
 // * blinks LEDs LD0-LD3 as counter output
 // * BTN0 (right button!) RESET counter to 0 when pressed
+// * BTN1 (left-button) HOLDs counter when pressed (also CE - counter enabled when button released)
 //
 // Revision: 
 // Revision 0.01 - File Created
-//          0.02 - Added RESET button BTN0 (right-button)
+//          0.02 - Added RESET button BTN0 (right button)
+//          0.03 - Added HOLD button BTN1 (left button)
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
@@ -27,6 +29,9 @@ module top(
 wire reset; // reset, active 1
 assign reset = ~ BTN[0]; // BTN0 is RESET, but it is active 0 - using "~" operator
 
+wire ce; // counter enable, active 1
+assign ce = BTN[1]; // inverted logic: when BTN0 is pressed => ce=0 (counter stopped = HOLD)
+
 wire clk_half_mhz; // 0.5 MHz (1/2=half) clock
 
 // we use integrated ClockDivider on XC2C256 chip
@@ -38,7 +43,7 @@ reg [20:0] counter  = 0; // stateful counter
 always @(posedge clk_half_mhz)
 	if (reset)
 		counter <= 0;
-	else
+	else if (ce)
 		counter <= counter + 1;
 
 // LED LD0-3 are "inverted" when grounded they are On. So using "~" operator:
