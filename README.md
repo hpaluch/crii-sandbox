@@ -13,6 +13,9 @@ Current sandbox projects:
   - BTN1 (left button!) is HOLD counter when pressed (internally there is inverted
     signal called `CE` (Counting Enabled))
 
+* [tut03-disp/](tut03-disp/) - counter on 4 digit, 7 segment LED display
+  - Work in progress
+
 General notes:
 - you need to create manually HDL project - ISE generally does not support Git
   or any other revision system well (Vivado is a bit better - it can generate TCL
