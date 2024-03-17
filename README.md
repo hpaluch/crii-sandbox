@@ -13,12 +13,15 @@ Current sandbox projects:
   - BTN1 (left button!) is HOLD counter when pressed (internally there is inverted
     signal called `CE` (Counting Enabled))
 
-* [tut03-disp/](tut03-disp/) - counter on 4 digit, 7 segment LED display
-  - Work in progress
+* [tut03-disp/](tut03-disp/) - hexadecimal counter on 4 digit, 7 segment LED display
+  and lowest 4-bits on LEDs
+  - BTN0 (right button) to RESET counter
+  - BTN1 (left button) to HOLD counter
 
 General notes:
-- you need to create manually HDL project - ISE generally does not support Git
-  or any other revision system well (Vivado is a bit better - it can generate TCL
+- you need to create manually HDL project - ISE generally does not
+  support Git or any other revision system well (Vivado is a bit
+  better - it can generate TCL
   script capable of creating full project and adding files to it from CLI)
 - keep "Top-level source type:" `HDL` (this includes both Verilog and VHDL)
 - selecting XC2C256 device, 144 pins, package TQ144, speed 7ns
