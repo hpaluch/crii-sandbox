@@ -50,6 +50,9 @@ Required Software:
 * Xilinx ISE Webpack 14.7 - official VM, can be downloaded from:
   - https://account.amd.com/en/forms/downloads/xef.html?filename=Xilinx_ISE_14.7_Win10_14.7_VM_0213_1.zip
   - unpack above zip and import `ova/14.7_VM.ova` to your VirtualBox
+  - it is actually Oracle Linux 6.4 64-bit - if you need to install additional packages
+    you may find https://mirrors.dotsrc.org/oracle-linux/OL6/U4/x86_64/OracleLinux-R6-U4-Server-x86_64-dvd.iso
+    useful
   - or you can use normal installer, however only Win7 or XP are supported. I tried it under Win10,
     but some features cause crash (for example file dialogs will crash ISE)
   - Workaround for File Dialog crash under Win 10:
